@@ -74,11 +74,11 @@
 
 <script>
 import Layout from "@/components/Layoutcustomer";
-import Pagination from "@/components/Pagination";
+//import Pagination from "@/components/Pagination";
 // import Layout from '../../components/Layout.vue';
 export default {
    props: [ "staff", "tel" ,"name","time" ,"date"],
-  components: { Layout, Pagination },
+  components: { Layout },
   data() {
       return {
         value: null

@@ -145,12 +145,12 @@
 <script>
 
 import Layout from "@/components/Layout";
-import Pagination from "@/components/Pagination";
+//import Pagination from "@/components/Pagination";
 import axios from 'axios';
 import {mapState} from "vuex";
 // import Layout from '../../components/Layout.vue';
 export default {
-  components: { Layout,Pagination },
+  components: { Layout },
    computed:{
     ...mapState(["listtoday"])
   },

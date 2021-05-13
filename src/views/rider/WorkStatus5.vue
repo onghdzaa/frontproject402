@@ -156,7 +156,7 @@ components:{
            
             }
                 axios.put('http://localhost:5000/statuschange5',parameters).then(res=>{
-        
+        console.log(res.status);
             })
             .catch(error =>{ 
                 console.error(error);
@@ -186,7 +186,7 @@ components:{
      onsubmit(){  
                this.$validator.validateAll().then(valid => {
                 //  this.alertify.confirm('การจองเสร็จสิ้น').setHeader('<em> แจ้งเตือน ! </em> ')
-                // console.log(this.form);
+                 console.log(valid);
                 if(this.form.radio=="")
                 return this.alertify.warning('กรุณากรอกข้อมูลให้ครบ !!')
                 

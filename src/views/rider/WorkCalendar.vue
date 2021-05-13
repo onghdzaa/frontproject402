@@ -133,7 +133,7 @@ this.$store.dispatch("set_listrider",this.$session.get('user'));
             }
            // console.log("sdasdasdasdsadasd******")
                 axios.put('http://localhost:5000/statuschangebegin',parameters).then(res=>{
-                  //console.log("sdasdasdasdsadasd")
+                  console.log(res.status)
                   
             })
             .catch(error =>{ 

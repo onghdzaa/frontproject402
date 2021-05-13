@@ -81,7 +81,7 @@ export default {
     methods: {
         onsubmit(){
            this.$validator.validateAll().then(valid => {
-               console.log("s");
+               console.log(valid);
             const parameters={"username":this.form.username,"password":this.form.password};
             axios.post('http://localhost:5000/logins',parameters).then(res=>{
                 //console.log(res.data.result);
@@ -93,7 +93,7 @@ export default {
                     //console.log(parameters+"sdsddsdsasda");
                       axios.post('http://localhost:5000/logindata',parameters).then(res=>{
                      console.log(res.data[0].name);
-                     const parameters={"username":this.form.username,"password":this.form.password}
+                   //  const parameters={"username":this.form.username,"password":this.form.password}
               this.$session.start();
             this.$session.set('user',res.data[0].numid);
           // this.$session.set('numcar',res.data[0].numcar);

@@ -154,7 +154,7 @@ export default {
   methods:{
     onsubmit(){
       this.$validator.validateAll().then(valid => {
-               console.log(this.form);
+               console.log(valid);
                if(this.form.eq_img=="")
                 return this.alertify.warning('กรุณาอัพโหลดรูปภาพ !!');
                 //axios ส่งข้อมูลไปยังแบคเอน
@@ -166,7 +166,7 @@ export default {
             
             }
                  axios.put('http://localhost:5000/editemployee',parameters).then(res=>{
-        console.log("img")
+        console.log(res.data)
 
             })
             .catch(error =>{ 

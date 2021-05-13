@@ -133,12 +133,12 @@
 
 <script>
 import Layout from "@/components/Layoutcustomer";
-import Pagination from "@/components/Pagination";
+//import Pagination from "@/components/Pagination";
 import axios from 'axios';
 import moment from 'moment'
 // import Layout from '../../components/Layout.vue';
 export default {
-  components: { Layout, Pagination },
+  components: { Layout},
   created(){
  axios.get('http://localhost:5000/customerpresent',{params:{id:this.$session.get("user")}}).then(res=>{
         console.log(res)

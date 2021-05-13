@@ -213,8 +213,10 @@ export default {
    },
   methods:{
     onsubmit(){
+     
       this.$validator.validateAll().then(valid => {
-              //  console.log(this.form);
+              //  console.log(this.form); 
+              console.log(valid);
                if(this.form.img=="")
                 {return this.alertify.warning('กรุณาอัพโหลดรูปภาพ !!');}
                 //axios ส่งข้อมูลไปยังแบคเอน
@@ -229,7 +231,9 @@ export default {
             "img": this.form.img,
             }
                 axios.put('http://localhost:5000/editprofile',parameters).then(res=>{
-       // console.log("img")
+                  console.log(res.status);
+
+                  // console.log("img")
 
             })
             .catch(error =>{ 

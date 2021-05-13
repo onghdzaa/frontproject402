@@ -150,6 +150,7 @@ export default {
   methods:{
     onsubmit(){
       this.$validator.validateAll().then(valid => {
+        console.log(valid);
                console.log(this.form.price_waytobuy);
                if(this.form.price_img==""){return this.alertify.warning('กรุณาอัพโหลดรูปภาพ !!');}
                 
@@ -162,7 +163,7 @@ export default {
             "index":this.id
             }
                  axios.put('http://localhost:5000/editprice',parameters).then(res=>{
-        console.log("img")
+        console.log(res.data)
 
             })
             .catch(error =>{ 

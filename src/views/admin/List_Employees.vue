@@ -97,11 +97,11 @@
 
 <script>
 import Layout from "@/components/Layout";
-import Pagination from "@/components/Pagination";
+//import Pagination from "@/components/Pagination";
 // import Layout from '../../components/Layout.vue';
 import {mapState} from "vuex";
 export default {
-  components: { Layout,Pagination },
+  components: { Layout },
   computed:{
     ...mapState(["staff"])
   },

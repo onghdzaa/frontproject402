@@ -193,10 +193,10 @@
 <script>
 import axios from "axios";
 import Layout from "@/components/Layoutcustomer";
-import Pagination from "@/components/Pagination";
+//import Pagination from "@/components/Pagination";
 // import Layout from '../../components/Layout.vue';
 export default {
-  components: { Layout, Pagination },
+  components: { Layout},
   props: ["staff", "time", "name", "tel","timereserve","img_staff"],
   data() {
     return {
@@ -275,6 +275,7 @@ currentDateTime() {
     },
      onsubmit(){  
                this.$validator.validateAll().then(valid => {
+                 console.log(valid);
                 //  this.alertify.confirm('การจองเสร็จสิ้น').setHeader('<em> แจ้งเตือน ! </em> ')
                 // console.log(this.form);
                 if(this.form.numcar=="" ||this.form.model==""||this.form.radio==""){return this.alertify.warning('กรุณากรอกข้อมูลให้ครบ !!')}
@@ -285,14 +286,14 @@ currentDateTime() {
           fullname: this.$session.get("user"),
         })
         .then((res) => {
-           var prices =
+          // var prices =
            console.log(this.form.radio);
             axios
             .post("http://localhost:5000/munuprice",{p:this.form.radio
                     })
             .then((ress) => {
               
-              prices=ress.data[0].price
+             // prices=ress.data[0].price
             console.log(ress.data[0].price)
             
            
@@ -339,7 +340,7 @@ currentDateTime() {
             "id":this.staff,
             }
          axios.put('http://localhost:5000/time',parameterss).then(res=>{
-        
+        console.log(res.data);
             })
             .catch(error =>{ 
                 console.error(error);

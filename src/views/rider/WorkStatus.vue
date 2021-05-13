@@ -242,6 +242,7 @@ console.log(this.$session.get('idwork'))
     methods:{
      onsubmit(){  
                this.$validator.validateAll().then(valid => {
+                 console.log(valid);
                 //  this.alertify.confirm('การจองเสร็จสิ้น').setHeader('<em> แจ้งเตือน ! </em> ')
                 // console.log(this.form);
                 if(this.form.radio==""){
@@ -256,7 +257,7 @@ console.log(this.$session.get('idwork'))
             "status":"ไปจุดนัดหมาย",
             }
                 axios.put('http://localhost:5000/statuschange',parameters).then(res=>{
-        
+        console.log(res.status);
             })
             .catch(error =>{ 
                 console.error(error);

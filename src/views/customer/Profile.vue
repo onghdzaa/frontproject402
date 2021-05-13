@@ -71,10 +71,10 @@
 // import dialog from './dialog.vue'
 import axios from 'axios';
 import Layout from "@/components/Layoutcustomer";
-import Pagination from "@/components/Pagination";
+//import Pagination from "@/components/Pagination";
 // import Layout from '../../components/Layout.vue';
 export default {
-  components: { Layout, Pagination },
+  components: { Layout},
   data() {
     return {
     name :'นางสาว สุขศรี อิ่มบุญ',

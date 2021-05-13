@@ -255,7 +255,7 @@ export default {
   methods: {
     onsubmit() {
       this.$validator.validateAll().then((valid) => {
-        console.log(this.form);
+        console.log(valid);
         if (this.form.img == "")
           return this.alertify.warning("กรุณาอัพโหลดรูปภาพ !!");
         //axios ส่งข้อมูลไปยังแบคเอน

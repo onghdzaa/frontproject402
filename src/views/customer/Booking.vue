@@ -118,12 +118,12 @@
 <script>
 // import dialog from './dialog.vue'
 import Layout from "@/components/Layoutcustomer";
-import Pagination from "@/components/Pagination";
+//import Pagination from "@/components/Pagination";
 import {mapState} from "vuex";
-import axios from "axios";
+//import axios from "axios";
 // import Layout from '../../components/Layout.vue';
 export default {
-  components: { Layout, Pagination },
+  components: { Layout},
   computed:{
     ...mapState(["staff"])
   },

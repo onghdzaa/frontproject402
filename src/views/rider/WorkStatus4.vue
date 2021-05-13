@@ -247,12 +247,13 @@ components:{
     methods:{
      onsubmit(){  
                this.$validator.validateAll().then(valid => {
+                 console.log(valid);
                 //  this.alertify.confirm('การจองเสร็จสิ้น').setHeader('<em> แจ้งเตือน ! </em> ')
                  console.log(this.form.radio);
                 if(this.form.radio=="โอนเงิน"&&this.form.img == ""){
                   console.log("sadasd");
 return this.alertify.warning('กรุณากรอกข้อมูลให้ครบ !!')
-                }else if(this.form.radio=="เงินสด"&& this.form.img != ""){}
+                }else if(this.form.radio=="เงินสด"&& this.form.img != ""){console.log("โอนเงิน");}
                 else if(this.form.radio==""){return this.alertify.warning('กรุณากรอกข้อมูลให้ครบ !!')}
                 const parameters = {
            
@@ -262,7 +263,7 @@ return this.alertify.warning('กรุณากรอกข้อมูลใ�
             "typepay":this.form.radio,
             }
                 axios.put('http://localhost:5000/statuschange4',parameters).then(res=>{
-        
+        console.log(res.status);
             })
             .catch(error =>{ 
                 console.error(error);
