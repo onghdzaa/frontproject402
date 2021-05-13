@@ -5,8 +5,8 @@
               <!-- รูปโลโก้ -->
               <img src="/img/logoo.png" alt="Logo" class="img-logo">
               <!-- การ์ดทั้งใบ -->
-      <div class="card">
-          <h1 class="card-header" style="margin-top:0% !important">
+      <div class="card" style="border-color: #17A2BB !important;"> 
+          <h1 class="card-header" style="margin-top:0% !important; font-size:20px">
             LOGIN
           </h1>
           <div class="card-body" style="margin-left: 15% !important;
@@ -180,9 +180,6 @@ h1{
     /* ขอบซ้ายขวาของการ์ด */
     margin-left: 15% ;
     margin-right: 15% ;
-}.card {
-    background-color: #fff !important;
-    border-color: #17A2BB !important;
 }
 .form-group{
     /* ขนาด,สีของชื่อฟอร์ม */
