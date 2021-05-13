@@ -121,12 +121,12 @@
 
 <script>
 import Layout from "@/components/Layoutcustomer";
-import Pagination from "@/components/Pagination";
+// import Pagination from "@/components/Pagination";
 import axios from "axios";
 // import Layout from '../../components/Layout.vue';
 export default {
   props:["id","id_staff","time","date","name","tel","img"],
-  components: { Layout, Pagination },
+  components: { Layout },
   created(){
   //console.log(this.id_staff);
   //console.log(this.value);
@@ -181,13 +181,14 @@ export default {
            
             }
                 axios.put('http://localhost:5000/calculate',parameters).then(res=>{
-                  //console.log("sdasd");
+                  console.log(res.data);
+                  
             })
             .catch(error =>{ 
                 console.error(error);
            });
 axios.put('http://localhost:5000/calculate/average',parameters).then(res=>{
-        
+        console.log(res.data);
             })
             .catch(error =>{ 
                 console.error(error);
@@ -195,7 +196,7 @@ axios.put('http://localhost:5000/calculate/average',parameters).then(res=>{
 console.log(this.id);
           axios.put('http://localhost:5000/stop',{id:this.id}).then(res=>{
    // console.log(this.$session.get('user'))
-   
+   console.log(res.data);
             })
             .catch(error =>{ 
                 console.error(error);
