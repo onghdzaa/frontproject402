@@ -35,55 +35,40 @@ import EditProfileRider from './views/rider/EditProfileRider'
 import NoBooking from './views/customer/NoBooking'
 // 
 
+
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
-    { path: '/', name: 'home',component: Home },
-     {path:'/register', name:'register',component:Register} ,
+  base: process.env.BASE_URL,routes: [
+     {path: '/', name: 'home',component: Home },
+     {path:'/register', name:'register',component:Register},
      {path:'/login', name:'login',component:Login},
-
      {path:'/admin', name:'equipment-list',component:List_Employees},
-     {path:'/admin/form', name:'admin-Edit_Employees',component:Edit_Employees,props: true},
+     {path:'/admin/form', name:'admin-Edit_Employees',component:Edit_Employees,props:true},
      {path:'/admin/List_income', name:'admin-List_income',component:List_income},
      {path:'/admin/List_Customer', name:'admin-List_Customer',component:List_Customer},
      {path:'/admin/List_Price', name:'admin-List_Price',component:List_Price},
-     {path:'/admin/Edit_Price', name:'admin-Edit_Price',component:Edit_Price,props: true},
-     
+     {path:'/admin/Edit_Price', name:'admin-Edit_Price',component:Edit_Price,props:true},
      {path:'/customer/Booking', name:'customer-booking',component:Booking},
-     {path:'/admin/Calendar', name:'admin-Calendar',component:Calendar}
-     ,
-     {path:'/customer/BookingButton', name:'BookingButton',component:BookingButton,props: true}
-     ,
+     {path:'/admin/Calendar', name:'admin-Calendar',component:Calendar},
+     {path:'/customer/BookingButton', name:'BookingButton',component:BookingButton,props:true},
      {path:'/customer/BookingConfirm', name:'BookingConfirm',component:BookingConfirm,props:true},
-     {path:'/customer/BookingHistory', name:'BookingHistory',component:BookingHistory}
-     ,
-     {path:'/customer/BookingStatus', name:'BookingStatus',component:BookingStatus}
-     ,
-     {path:'/customer/Profile', name:'Profile',component:Profile} ,
-     {path:'/customer/NoBooking', name:'NoBooking',component: NoBooking}
-     ,
-     {path:'/customer/Edit_Profile', name:'Edit_Profile',component:Edit_Profile}
-     ,
-     {path:'/rider/WorkCalendar', name:'rider-WorkCalendar',component:WorkCalendar}
-     ,
-     {path:'/rider/WorkStatus', name:'rider-WorkStatus',component:WorkStatus}
-     ,
-     {path:'/rider/ProfileRider', name:'rider-ProfileRider',component:ProfileRider}
-     ,
-     {path:'/rider/EditProfileRider', name:'rider-EditProfileRider',component:EditProfileRider}  ,
-     {path:'/rider/WorkStatus2', name:'rider-WorkStatus2',component:WorkStatus2}
-     ,
-     {path:'/rider/WorkStatus3', name:'rider-WorkStatus3',component:WorkStatus3}
-     ,
+     {path:'/customer/BookingHistory', name:'BookingHistory',component:BookingHistory},
+     {path:'/customer/BookingStatus', name:'BookingStatus',component:BookingStatus},
+     {path:'/customer/Profile', name:'Profile',component:Profile},
+     {path:'/customer/NoBooking', name:'NoBooking',component: NoBooking},
+     {path:'/customer/Edit_Profile', name:'Edit_Profile',component:Edit_Profile},
+     {path:'/rider/WorkCalendar', name:'rider-WorkCalendar',component:WorkCalendar},
+     {path:'/rider/WorkStatus', name:'rider-WorkStatus',component:WorkStatus},
+     {path:'/rider/ProfileRider', name:'rider-ProfileRider',component:ProfileRider},
+     {path:'/rider/EditProfileRider', name:'rider-EditProfileRider',component:EditProfileRider},
+     {path:'/rider/WorkStatus2', name:'rider-WorkStatus2',component:WorkStatus2},
+     {path:'/rider/WorkStatus3', name:'rider-WorkStatus3',component:WorkStatus3},
      {path:'/rider/WorkStatus4', name:'rider-WorkStatus4',component:WorkStatus4},
-     ,
      {path:'/rider/WorkStatus5', name:'rider-WorkStatus5',component:WorkStatus5},
      {path:'/customer/Rating', name:'customer-Rating',component:Rating,props:true},
-     {path:'/customer/Price', name:'customer-Price',component:Price}
-     ,
-     {path:'/rider/UnClick', name:'rider-UnClick',component:UnClick},
+     {path:'/customer/Price', name:'customer-Price',component:Price},
+     {path:'/rider/UnClick', name:'rider-UnClick',component:UnClick}
   ]
 })
