@@ -10,7 +10,7 @@
             LOGIN
           </h1>
           <div class="card-body" style="margin-left: 15% !important;
-    margin-right: 15% !important;" >
+    margin-right: 15% !important;background-color: #fff !important;border-color: #17A2BB !important;" >
                 <form 
                 @submit.prevent="onsubmit()">
                     <!-- ชื่อผู้ใช้งาน -->
@@ -180,6 +180,9 @@ h1{
     /* ขอบซ้ายขวาของการ์ด */
     margin-left: 15% ;
     margin-right: 15% ;
+}.card {
+    background-color: #fff !important;
+    border-color: #17A2BB !important;
 }
 .form-group{
     /* ขนาด,สีของชื่อฟอร์ม */
