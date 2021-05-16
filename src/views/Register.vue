@@ -187,7 +187,7 @@ export default {
            
            console.log("ss");
             const parameters={"username":this.form.username,"password":this.form.password,"name":this.form.name,"tel":this.form.tel,"email":this.form.email,"address":this.form.address,"model":this.form.model,"numcar":this.form.numcar,"img":this.form.img};
-            axios.post('http://localhost:5000/registers',parameters).then(res=>{
+            axios.post('https://appcarwashbackend.herokuapp.com/registers',parameters).then(res=>{
                 console.log(res.data.result);
               this.$router.push({name :"login"})
                 console.log("ss");
