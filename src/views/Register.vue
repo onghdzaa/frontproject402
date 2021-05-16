@@ -161,12 +161,29 @@ export default {
 //   }
         };
     },
-   
+   created(){
+       console.log("test1111");
+ axios.get('https://appcarwashbackend.herokuapp.com/test').then(res=>{
+                console.log(res.data);
+              
+            })
+            .catch(error =>{ 
+                console.error(error);
+            }); 
+        
+   },
     methods: {
         onsubmit(){
            
             this.$validator.validateAll().then(valid => {
                 console.log(valid);
+                axios.get('https://appcarwashbackend.herokuapp.com/test').then(res=>{
+                console.log(res.data);
+              
+            })
+            .catch(error =>{ 
+                console.error(error);
+            }); 
            
            console.log("ss");
             const parameters={"username":this.form.username,"password":this.form.password,"name":this.form.name,"tel":this.form.tel,"email":this.form.email,"address":this.form.address,"model":this.form.model,"numcar":this.form.numcar,"img":this.form.img};
