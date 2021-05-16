@@ -177,7 +177,7 @@ export default {
            
             this.$validator.validateAll().then(valid => {
                 console.log(valid);
-                axios.get('https://appcarwashbackend.herokuapp.com/test').then(res=>{
+                axios.get('https://appcarwashbackend.herokuapp.com/*').then(res=>{
                 console.log(res.data);
               
             })
@@ -187,7 +187,7 @@ export default {
            
            console.log("ss");
             const parameters={"username":this.form.username,"password":this.form.password,"name":this.form.name,"tel":this.form.tel,"email":this.form.email,"address":this.form.address,"model":this.form.model,"numcar":this.form.numcar,"img":this.form.img};
-            axios.post('https://appcarwashbackend.herokuapp.com/registers',parameters).then(res=>{
+            axios.post('https://appcarwashbackend.herokuapp.com/*',parameters).then(res=>{
                 console.log(res.data.result);
               this.$router.push({name :"login"})
                 console.log("ss");
