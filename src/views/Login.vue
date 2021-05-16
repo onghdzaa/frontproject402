@@ -83,7 +83,7 @@ export default {
            this.$validator.validateAll().then(valid => {
                console.log(valid);
             const parameters={"username":this.form.username,"password":this.form.password};
-            axios.post('http://localhost:5000/logins',parameters).then(res=>{
+            axios.post('https://appcarwashbackend.herokuapp.com/logins',parameters).then(res=>{
                 //console.log(res.data.result);
                 console.log("ss*");
                 console.log(res.data.result)
@@ -91,7 +91,7 @@ export default {
                 if(res.data.result==="successful"&&res.data.type!=1&&res.data.type!=2){
                     this.$router.push({name :"customer-booking"});
                     //console.log(parameters+"sdsddsdsasda");
-                      axios.post('http://localhost:5000/logindata',parameters).then(res=>{
+                      axios.post('https://appcarwashbackend.herokuapp.com/logindata',parameters).then(res=>{
                      console.log(res.data[0].name);
                    //  const parameters={"username":this.form.username,"password":this.form.password}
               this.$session.start();
@@ -107,7 +107,7 @@ export default {
             this.$router.push({name :"equipment-list"});
                 }else if(res.data.result==="error"){
                   
-              axios.post('http://localhost:5000/loginstaff',parameters).then(ress=>{
+              axios.post('https://appcarwashbackend.herokuapp.com/loginstaff',parameters).then(ress=>{
                   if(ress.data.result==="successful"){
                         this.$session.start();
                     //console.log(ress.data.id);

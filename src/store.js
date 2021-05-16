@@ -27,31 +27,31 @@ export default new Vuex.Store({
   actions: {
     set_staff: ({ commit }) =>
       axios
-        .get("http://localhost:5000/staff")
+        .get("https://appcarwashbackend.herokuapp.com/staff")
         .then((res) => commit("set_staff", res.data)),
     set_bookinghistory: ({ commit }, id) =>
       axios
-        .get("http://localhost:5000/bookinghistory/apix/apix/"+id)
+        .get("https://appcarwashbackend.herokuapp.com/apix/apix/"+id)
         .then((res) => commit("set_bookinghistory", res.data)),
     set_customer: ({ commit }) =>
       axios
-        .get("http://localhost:5000/listcustomer")
+        .get("https://appcarwashbackend.herokuapp.com/listcustomer")
         .then((res) => commit("set_customer", res.data)),
     set_calender: ({ commit }) =>
       axios
-        .get("http://localhost:5000/calender")
+        .get("https://appcarwashbackend.herokuapp.com/calender")
         .then((res) => commit("set_calender", res.data)),
     set_listprice: ({ commit }) =>
       axios
-        .get("http://localhost:5000/listprice")
+        .get("https://appcarwashbackend.herokuapp.com/listprice")
         .then((res) => commit("set_listprice", res.data)),
         set_listrider: ({ commit }, id) =>
         axios
-          .get("http://localhost:5000/listrider",{ params: { status: "กำลังดำเนินการ" ,id:id}})
+          .get("https://appcarwashbackend.herokuapp.com/listrider",{ params: { status: "กำลังดำเนินการ" ,id:id}})
           .then((res) => commit("set_listrider", res.data)),
           set_listtoday: ({ commit }) =>
           axios
-            .get("http://localhost:5000/calender/today")
+            .get("https://appcarwashbackend.herokuapp.com/calender/today")
             .then((res) => commit("set_listtoday", res.data)),
   },
 });
