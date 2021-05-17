@@ -35,7 +35,7 @@
     </div>
    
     <div class="card mb-3" v-for="sv in staff" :key="sv.ID_Staff" style=" border-right: solid 9px #17A2BB;">
-      <div class="row  align-items-center" style="background-color: white;" >
+      <div class="row  align-items-center" >
         <div class="col-sm-4 ">
           <img v-bind:src="sv.img_staff"  alt="user" class="img-booking" style="max-width: 100%;">
         </div>
