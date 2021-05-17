@@ -69,7 +69,7 @@ export default {
 
 <style scope>
 .card {
-  background: none;
+  /* background: none; */
   border: none;
   border-color: #eeeeee;
 }
