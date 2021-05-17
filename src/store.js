@@ -31,7 +31,7 @@ export default new Vuex.Store({
         .then((res) => commit("set_staff", res.data)),
     set_bookinghistory: ({ commit }, id) =>
       axios
-        .get("https://appcarwashbackend.herokuapp.com/apix/apix/"+id)
+        .get("https://appcarwashbackend.herokuapp.com/bookinghistory/apix/apix/"+id)
         .then((res) => commit("set_bookinghistory", res.data)),
     set_customer: ({ commit }) =>
       axios

@@ -5,12 +5,12 @@
               <!-- รูปโลโก้ -->
               <img src="/img/logoo.png" alt="Logo" class="img-logo">
               <!-- การ์ดทั้งใบ -->
-      <div class="card" style="border-color: #17A2BB !important;"> 
-          <h1 class="card-header" style="margin-top:0% !important; font-size:20px">
+      <div class="card" > 
+          <h1 class="card-header" style="margin-top:0% !important;">
             LOGIN
           </h1>
           <div class="card-body" style="margin-left: 15% !important;
-    margin-right: 15% !important;background-color: #fff !important;border-color: #17A2BB !important;" >
+    margin-right: 15% !important;" >
                 <form 
                 @submit.prevent="onsubmit()">
                     <!-- ชื่อผู้ใช้งาน -->

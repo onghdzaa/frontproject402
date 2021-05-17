@@ -159,8 +159,9 @@ computed:{
               
     //           console.error(error);
     //         });
+    console.log(this.$session.get('user'));
             this.$store.dispatch("set_bookinghistory",this.$session.get('user'));
-            axios.post('http://localhost:5000/profile',{fullname:this.$session.get('user')}).then(res=>{
+            axios.post('https://appcarwashbackend.herokuapp.com/profile',{fullname:this.$session.get('user')}).then(res=>{
              // console.log(res.data[0].img)
        if(res.data[0].img!=null){
          //console.log("sssssssss")
