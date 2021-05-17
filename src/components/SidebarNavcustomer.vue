@@ -102,7 +102,6 @@ this.form.path="/customer/NoBooking"
 
 <style scope>
 .card {
-  background: none;
   border: none;
   border-color: #eeeeee;
 }
