@@ -97,7 +97,7 @@ export default {
         this.tel=res.data[0].tel;
         this.email=res.data[0].email;
         this.address=res.data[0].address;
-        this.model=res.data[0].numcar;
+        this.model=res.data[0].model;
         this.numcar=res.data[0].numcar;
         this.username=res.data[0].user_id;
         this.img=res.data[0].img;

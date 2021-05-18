@@ -65,7 +65,7 @@
             <tr v-for="sv in staff" :key="sv.ID_Staff">
               <td>
                 <div class="img-container">
-                  <expandable-image src="/img/imguser.jpg" alt="employee" />
+                  <expandable-image v-bind:src="sv.img_staff" alt="employee" />
                 </div>
               </td>
                <td>{{sv.id_staff}}</td>

@@ -94,7 +94,7 @@
                <td>
                   <div class="help" style="font-size:1px;color:#fff">================</div>
                 <div class="img-container">
-                  <expandable-image src="/img/slip.jpg" alt="user" />
+                  <expandable-image v-bind:src="user.img" alt="user" />
                 </div>
               </td>
               <td>{{user.name}} </td>
