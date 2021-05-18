@@ -92,7 +92,7 @@
                 </button>
               </div>
               <div class="col-6 col-sm-4 "  >
-                <button type="submit" @click="BookingButton(sv.id_staff,sv.tell_staff,sv.full_name,'16.00-27.00','time9',sv.img_staff)" class="btn btn-info btn-block" style=" margin-top: 10px;  background-color: #17A2BB;color:#fff;" :disabled="sv.time9==1">
+                <button type="submit" @click="BookingButton(sv.id_staff,sv.tell_staff,sv.full_name,'16.00-17.00','time9',sv.img_staff)" class="btn btn-info btn-block" style=" margin-top: 10px;  background-color: #17A2BB;color:#fff;" :disabled="sv.time9==1">
                   16.00-17.00
                 </button>
               </div>

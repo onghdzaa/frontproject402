@@ -91,7 +91,7 @@ export default {
   },
   created(){
      
-      axios.post('http://localhost:5000/profile',{fullname:this.$session.get('user')}).then(res=>{
+      axios.post('https://appcarwashbackend.herokuapp.com/profile',{fullname:this.$session.get('user')}).then(res=>{
         console.log(this.$session.get('user'))
         this.name=res.data[0].name;
         this.tel=res.data[0].tel;

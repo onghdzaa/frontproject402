@@ -89,7 +89,7 @@ components:{
   },
   created(){
     //console.log(this.$session.get('user'))
-     axios.get('http://localhost:5000/profilerider',{params:{id:this.$session.get('user')}}).then(res=>{
+     axios.get('https://appcarwashbackend.herokuapp.com/profilerider',{params:{id:this.$session.get('user')}}).then(res=>{
         //console.log(res.data)
          this.name=res.data[0].full_name;
         this.tel=res.data[0].tell_staff;

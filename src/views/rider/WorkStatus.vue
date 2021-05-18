@@ -221,8 +221,8 @@ data() {
   console.log(this.$session.get('user'))
 console.log(this.$session.get('idwork'))
 
-                axios.get('http://localhost:5000/showinformation',{params:{id:this.$session.get('user')}}).then(res=>{
-              //  console.log(res.data[0].id)
+                axios.get('https://appcarwashbackend.herokuapp.com/showinformation',{params:{id:this.$session.get('user')}}).then(res=>{
+                console.log(res.data[0].time)
         this.time=res.data[0].time;
         this.name_member=res.data[0].name_member;
         this.tel_member=res.data[0].tel_member;
@@ -256,7 +256,7 @@ console.log(this.$session.get('idwork'))
             
             "status":"ไปจุดนัดหมาย",
             }
-                axios.put('http://localhost:5000/statuschange',parameters).then(res=>{
+                axios.put('https://appcarwashbackend.herokuapp.com/statuschange',parameters).then(res=>{
         console.log(res.status);
             })
             .catch(error =>{ 
@@ -270,7 +270,7 @@ console.log(this.$session.get('idwork'))
            
         },
         gotogps(){
-           axios.get('http://localhost:5000/gps',{params:{id:this.$session.get("idwork")}}).then(res=>{
+           axios.get('https://appcarwashbackend.herokuapp.com/gps',{params:{id:this.$session.get("idwork")}}).then(res=>{
        // console.log(res.data[0]);
         window.open("https://www.google.com/maps/place/"+res.data[0].x+","+res.data[0].y);
             })

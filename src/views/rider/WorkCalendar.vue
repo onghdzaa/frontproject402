@@ -123,6 +123,7 @@ this.$store.dispatch("set_listrider",this.$session.get('user'));
      },
     methods:{
     BookingButton(idwork){
+
        this.$session.set('idwork',idwork);
         
         const parameters = {
@@ -132,14 +133,17 @@ this.$store.dispatch("set_listrider",this.$session.get('user'));
             "working":1
             }
            // console.log("sdasdasdasdsadasd******")
-                axios.put('http://localhost:5000/statuschangebegin',parameters).then(res=>{
+                axios.put('https://appcarwashbackend.herokuapp.com/statuschangebegin',parameters).then(res=>{
                   console.log(res.status)
                   
             })
             .catch(error =>{ 
                 console.error(error);
-           });
+           });  
+           
            this.$router.push({name :"rider-WorkStatus"})
+           setTimeout(function(){location.reload()}, 3000);
+        // location.reload();
     },
    
     }

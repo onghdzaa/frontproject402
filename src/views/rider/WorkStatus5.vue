@@ -155,8 +155,11 @@ components:{
             
            
             }
-                axios.put('http://localhost:5000/statuschange5',parameters).then(res=>{
-        console.log(res.status);
+                axios.put('https://appcarwashbackend.herokuapp.com/statuschange5',parameters).then(res=>{
+                  console.log(res.status);
+      //   if(res.data.result=="pass"){
+      //  // return location.reload();
+      //  }
             })
             .catch(error =>{ 
                 console.error(error);
@@ -164,7 +167,7 @@ components:{
             
       
      
-                axios.get('http://localhost:5000/showinformation5',{params:{id:this.$session.get('idwork')}}).then(res=>{
+                axios.get('https://appcarwashbackend.herokuapp.com/showinformation5',{params:{id:this.$session.get('idwork')}}).then(res=>{
                 console.log(res.data[0].time)
         this.employees[0].time=res.data[0].time;
         this.employees[0].name_member=res.data[0].name_member;

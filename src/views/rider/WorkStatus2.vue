@@ -181,7 +181,7 @@ components:{
    created(){
       
      
-                axios.get('http://localhost:5000/showinformation',{params:{id:this.$session.get('user')}}).then(res=>{
+                axios.get('https://appcarwashbackend.herokuapp.com/showinformation',{params:{id:this.$session.get('user')}}).then(res=>{
                 console.log(res.data[0].time)
         this.employees[0].time=res.data[0].time;
         this.employees[0].name_member=res.data[0].name_member;
@@ -211,7 +211,7 @@ components:{
             "status":"ถึงจุดนัดหมาย"
            
             }
-                axios.put('http://localhost:5000/statuschange',parameters).then(res=>{
+                axios.put('https://appcarwashbackend.herokuapp.com/statuschange',parameters).then(res=>{
         console.log(res.log);
             })
             .catch(error =>{ 

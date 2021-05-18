@@ -222,7 +222,7 @@ export default {
   created() {
    //console.log(this.form.name + "ssssss"); 
    axios
-            .get("http://localhost:5000/listprice")
+            .get("https://appcarwashbackend.herokuapp.com/listprice")
             .then((res) => {
               this.dataprice=res.data
               console.log(this.dataprice);
@@ -282,14 +282,14 @@ currentDateTime() {
                 console.log(this.form.radio);
             
                  axios
-        .post("http://localhost:5000/profile", {
+        .post("https://appcarwashbackend.herokuapp.com/profile", {
           fullname: this.$session.get("user"),
         })
         .then((res) => {
           // var prices =
            console.log(this.form.radio);
             axios
-            .post("http://localhost:5000/munuprice",{p:this.form.radio
+            .post("https://appcarwashbackend.herokuapp.com/munuprice",{p:this.form.radio
                     })
             .then((ress) => {
               
@@ -297,6 +297,7 @@ currentDateTime() {
             console.log(ress.data[0].price)
             
            
+
         // console.log(prices)
           const parameters = {
             "name_member": res.data[0].name,
@@ -317,7 +318,7 @@ currentDateTime() {
             "img":this.img_staff
           };
           axios
-            .post("http://localhost:5000/booking", parameters)
+            .post("https://appcarwashbackend.herokuapp.com/booking", parameters)
             .then((res) => {
               this.$session.set('id2',res.data.id);
               console.log(res.data.id);
@@ -339,7 +340,7 @@ currentDateTime() {
             "time": this.timereserve,
             "id":this.staff,
             }
-         axios.put('http://localhost:5000/time',parameterss).then(res=>{
+         axios.put('https://appcarwashbackend.herokuapp.com/time',parameterss).then(res=>{
         console.log(res.data);
             })
             .catch(error =>{ 

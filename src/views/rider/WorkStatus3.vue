@@ -229,7 +229,7 @@ export default {
    created(){
       
      
-                axios.get('http://localhost:5000/showinformation',{params:{id:this.$session.get('user')}}).then(res=>{
+                axios.get('https://appcarwashbackend.herokuapp.com/showinformation',{params:{id:this.$session.get('user')}}).then(res=>{
                 console.log(res.data[0].time)
          this.employees[0].time=res.data[0].time;
         this.employees[0].name_member=res.data[0].name_member;
@@ -261,7 +261,7 @@ export default {
             "imgcar":this.form.img
            
             }
-                axios.put('http://localhost:5000/statuschange3',parameters).then(res=>{
+                axios.put('https://appcarwashbackend.herokuapp.com/statuschange3',parameters).then(res=>{
         console.log(res.status);
             })
             .catch(error =>{ 

@@ -52,7 +52,7 @@
             <tr v-for="sv in listprice" :key="sv.id">
               <td>
                 <div class="img-container">
-                  <expandable-image src="/img/ล้างรถภายใน.png" alt="sv" />
+                  <expandable-image v-bind:src="sv.img" alt="sv" />
                 </div>
               </td>
                

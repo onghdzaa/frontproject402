@@ -182,7 +182,7 @@ console.log(users);
     },
     created(){
       this.$store.dispatch("set_listtoday");
-axios.get('http://localhost:5000/calender/today/sum').then(res=>{
+axios.get('https://appcarwashbackend.herokuapp.com/calender/today/sum').then(res=>{
         console.log(res);
       this.price=res.data[0].sum
             })

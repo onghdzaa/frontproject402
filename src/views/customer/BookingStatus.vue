@@ -140,7 +140,7 @@ import moment from 'moment'
 export default {
   components: { Layout},
   created(){
- axios.get('http://localhost:5000/customerpresent',{params:{id:this.$session.get("user")}}).then(res=>{
+ axios.get('https://appcarwashbackend.herokuapp.com/customerpresent',{params:{id:this.$session.get("user")}}).then(res=>{
         console.log(res)
         this.status=res.data[0].status
       this.date=moment(String(res.data[0].date)).format('MM-DD-YYYY')

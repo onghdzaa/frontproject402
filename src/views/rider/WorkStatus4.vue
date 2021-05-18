@@ -228,7 +228,7 @@ components:{
    created(){
       
      
-                axios.get('http://localhost:5000/showinformation',{params:{id:this.$session.get('user')}}).then(res=>{
+                axios.get('https://appcarwashbackend.herokuapp.com/showinformation',{params:{id:this.$session.get('user')}}).then(res=>{
                 console.log(res.data[0].time)
          this.employees[0].time=res.data[0].time;
         this.employees[0].name_member=res.data[0].name_member;
@@ -262,7 +262,7 @@ return this.alertify.warning('กรุณากรอกข้อมูลใ�
             "imgpay":this.form.img,
             "typepay":this.form.radio,
             }
-                axios.put('http://localhost:5000/statuschange4',parameters).then(res=>{
+                axios.put('https://appcarwashbackend.herokuapp.com/statuschange4',parameters).then(res=>{
         console.log(res.status);
             })
             .catch(error =>{ 
@@ -270,8 +270,9 @@ return this.alertify.warning('กรุณากรอกข้อมูลใ�
            });
                 
                this.$router.push({ name: "rider-WorkStatus5" });
-               location.reload();
+               
                 console.log(this.form);
+               // location.reload();
            });
            
         }, 

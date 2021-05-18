@@ -165,7 +165,7 @@ export default {
             "img": this.form.eq_img,
             
             }
-                 axios.put('http://localhost:5000/editemployee',parameters).then(res=>{
+                 axios.put('https://appcarwashbackend.herokuapp.com/editemployee',parameters).then(res=>{
         console.log(res.data)
 
             })

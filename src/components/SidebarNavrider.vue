@@ -95,7 +95,7 @@ export default {
   // props:["header" , "navs"]
   created(){
    
- axios.get('http://localhost:5000/riderstop',{params:{id:this.$session.get('user')}}).then(res=>{
+ axios.get('https://appcarwashbackend.herokuapp.com/riderstop',{params:{id:this.$session.get('user')}}).then(res=>{
     //console.log(res.data[0].status)
    // console.log(res.data.result)
    // console.log(res.data);

@@ -80,7 +80,7 @@ export default {
     };
   },
    created(){
- axios.get('http://localhost:5000/customerstop',{params:{id:this.$session.get('user')}}).then(res=>{
+ axios.get('https://appcarwashbackend.herokuapp.com/customerstop',{params:{id:this.$session.get('user')}}).then(res=>{
     //console.log(res.data[0].status)
     console.log();
     if(res.data.result=="error"){

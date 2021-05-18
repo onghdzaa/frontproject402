@@ -162,7 +162,7 @@ export default {
             "price_img": this.form.price_img,
             "index":this.id
             }
-                 axios.put('http://localhost:5000/editprice',parameters).then(res=>{
+                 axios.put('https://appcarwashbackend.herokuapp.com/editprice',parameters).then(res=>{
         console.log(res.data)
 
             })

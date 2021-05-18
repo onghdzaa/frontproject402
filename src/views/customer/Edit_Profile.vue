@@ -196,7 +196,7 @@ export default {
   components: { Layout },
    created(){
      
-      axios.post('http://localhost:5000/profile',{fullname:this.$session.get('user')}).then(res=>{
+      axios.post('https://appcarwashbackend.herokuapp.com/profile',{fullname:this.$session.get('user')}).then(res=>{
         console.log(this.$session.get('user'))
         this.form.name=res.data[0].name;
         this.form.tel=res.data[0].tel;
@@ -230,7 +230,7 @@ export default {
             "address": this.form.address,
             "img": this.form.img,
             }
-                axios.put('http://localhost:5000/editprofile',parameters).then(res=>{
+                axios.put('https://appcarwashbackend.herokuapp.com/editprofile',parameters).then(res=>{
                   console.log(res.status);
 
                   // console.log("img")
