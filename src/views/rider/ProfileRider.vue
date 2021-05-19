@@ -93,11 +93,11 @@ components:{
         //console.log(res.data)
          this.name=res.data[0].full_name;
         this.tel=res.data[0].tell_staff;
-        // this.email=res.data[0].email;
-        // this.address=res.data[0].address;
-        // this.model=res.data[0].numcar;
-        // this.numcar=res.data[0].numcar;
-        //this.username=res.data[0].user_id;
+         this.email=res.data[0].email;
+       this.address=res.data[0].address;
+         this.model=res.data[0].model;
+         this.numcar=res.data[0].numcar;
+        this.username=res.data[0].username;
 
             })
             .catch(error =>{ 

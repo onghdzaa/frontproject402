@@ -18,7 +18,7 @@
         >ตารางงานพนักงาน</router-link
       >
       <!-- ปุ่มรีเซ็ทข้อมูล -->
-      <router-link
+      <div
         class="btn"
         style="
           background-color: #ed2939;
@@ -30,8 +30,8 @@
           margin-bottom: 15px;
           min-width: 130px;
         "
-        to="/admin/Calendar"
-        >รีเซ็ตข้อมูล</router-link
+         @click="reset()" 
+        >รีเซ็ตข้อมูล</div
       >
       
     </div>
@@ -121,6 +121,7 @@
 <script>
 import Layout from "@/components/Layout";
 import {mapState} from "vuex";
+import axios from "axios";
 export default {
 components: { Layout },
 computed:{
@@ -132,7 +133,14 @@ this.$store.dispatch("set_calender");
 
   methods: {
    
-    // โหลดข้อมูล Calendar ของ UI
+    reset(){
+         axios.put('https://appcarwashbackend.herokuapp.com/reset').then(res=>{
+                  console.log(res.status);
+            })
+            .catch(error =>{ 
+                console.error(error);
+           });
+    }
     
   },
  data() {

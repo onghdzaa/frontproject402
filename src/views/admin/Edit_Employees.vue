@@ -64,7 +64,34 @@
             class="form-control" />
             <p class="invalid-feedback">{{errors.first('eq_id')}}</p>
           </div>
-
+          <div
+            class="form-group"
+            style="max-width: 350px !important; margin: auto;padding: 0.5rem 1rem;"
+          >
+            <label for="">Username</label>
+            <input type="text" 
+            v-model.trim="form.eq_user" 
+             name ="eq_user"
+              v-validate="{ required:true}"
+               :class="{'is-invalid' : errors.has('eq_user')}"
+              
+            class="form-control" />
+             <p class="invalid-feedback">{{errors.first('eq_user')}}</p>
+          </div>
+          <div
+            class="form-group"
+            style="max-width: 350px !important; margin: auto;padding: 0.5rem 1rem;"
+          >
+            <label for="">Password</label>
+            <input type="text" 
+            v-model.trim="form.eq_pass" 
+             name ="eq_pass"
+              v-validate="{ required:true}"
+               :class="{'is-invalid' : errors.has('eq_pass')}"
+              
+            class="form-control" />
+             <p class="invalid-feedback">{{errors.first('eq_pass')}}</p>
+          </div>
           <div
             class="form-group"
             style="max-width: 350px !important; margin: auto ;padding: 0.5rem 1rem;"
@@ -92,6 +119,62 @@
               
             class="form-control" />
              <p class="invalid-feedback">{{errors.first('eq_tel')}}</p>
+          </div>
+             <div
+            class="form-group"
+            style="max-width: 350px !important; margin: auto;padding: 0.5rem 1rem;"
+          >
+            <label for="">อีเมล</label>
+            <input type="text" 
+            v-model.trim="form.eq_email" 
+             name ="eq_email"
+              v-validate="{ required:true}"
+               :class="{'is-invalid' : errors.has('eq_email')}"
+              
+            class="form-control" />
+             <p class="invalid-feedback">{{errors.first('eq_email')}}</p>
+          </div>
+             <div
+            class="form-group"
+            style="max-width: 350px !important; margin: auto;padding: 0.5rem 1rem;"
+          >
+            <label for="">ที่อยู่</label>
+            <input type="text" 
+            v-model.trim="form.eq_address" 
+             name ="eq_address"
+              v-validate="{ required:true}"
+               :class="{'is-invalid' : errors.has('eq_address')}"
+              
+            class="form-control" />
+             <p class="invalid-feedback">{{errors.first('eq_address')}}</p>
+          </div>
+              <div
+            class="form-group"
+            style="max-width: 350px !important; margin: auto;padding: 0.5rem 1rem;"
+          >
+            <label for="">ยี่ห้อของรถ</label>
+            <input type="text" 
+            v-model.trim="form.eq_model" 
+             name ="eq_model"
+              v-validate="{ required:true}"
+               :class="{'is-invalid' : errors.has('eq_model')}"
+              
+            class="form-control" />
+             <p class="invalid-feedback">{{errors.first('eq_model')}}</p>
+          </div>
+              <div
+            class="form-group"
+            style="max-width: 350px !important; margin: auto;padding: 0.5rem 1rem;"
+          >
+            <label for="">ทะเบียนรถ</label>
+            <input type="text" 
+            v-model.trim="form.eq_numcar" 
+             name ="eq_numcar"
+              v-validate="{ required:true}"
+               :class="{'is-invalid' : errors.has('eq_numcar')}"
+              
+            class="form-control" />
+             <p class="invalid-feedback">{{errors.first('eq_numcar')}}</p>
           </div>
           <br />
           
@@ -133,7 +216,7 @@ import Layout from "@/components/Layout";
 import axios from "axios";
 // import Layout from '../../components/Layout.vue';
 export default {
-  props:["id","name","tel"],
+  props:["id","name","tel","user","email","address","numcar","model","pass"],
   data(){
     console.log(this.id)
         return {
@@ -141,6 +224,12 @@ export default {
                 eq_id:this.id,
                 eq_name:this.name,
                 eq_tel:this.tel,
+                eq_user:this.user,
+                eq_pass:this.pass,
+                eq_email:this.email,
+                eq_address:this.address,
+                eq_numcar:this.numcar,
+                eq_model:this.model,
                 eq_img:""
                 
 
@@ -160,13 +249,19 @@ export default {
                 //axios ส่งข้อมูลไปยังแบคเอน
                  const parameters = {
             "id": this.form.eq_id,
+            "user": this.form.eq_user,
+            "pass": this.form.eq_pass,
             "name": this.form.eq_name,
             "tel": this.form.eq_tel,
+            "email": this.form.eq_email,
+            "address": this.form.eq_address,
+            "model": this.form.eq_model,
+            "numcar": this.form.eq_numcar,
             "img": this.form.eq_img,
             
             }
                  axios.put('https://appcarwashbackend.herokuapp.com/editemployee',parameters).then(res=>{
-        console.log(res.data)
+        console.log(res.status)
 
             })
             .catch(error =>{ 

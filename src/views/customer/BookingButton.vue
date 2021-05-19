@@ -315,7 +315,8 @@ currentDateTime() {
             "status": "กำลังดำเนินการ",
             "id_member": this.$session.get("user"),
             "address": res.data[0].address,
-            "img":this.img_staff
+            "img":this.img_staff,
+            "img_member":res.data[0].img
           };
           axios
             .post("https://appcarwashbackend.herokuapp.com/booking", parameters)

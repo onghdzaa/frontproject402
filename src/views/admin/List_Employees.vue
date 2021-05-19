@@ -74,12 +74,12 @@
                    
               
               <td class="text-right">
-                <i @click="gotoEdit(sv.id_staff,sv.full_name,sv.tell_staff )"
+                <i @click="gotoEdit(sv.id_staff,sv.full_name,sv.tell_staff,sv.username,sv.email,sv.address,sv.model,sv.numcar,sv.password)"
                   class="pointer fa fa-pencil-square"
                   style="padding-right: 19%; color: #17a2bb"
                 >
                 </i>
-                <i @click="onDelete(employee)" class="pointer fa fa-trash" style="color: #ed2939"> </i>
+                <i @click="onDelete(sv.id_staff)" class="pointer fa fa-trash" style="color: #ed2939"> </i>
               </td>
             </tr>
           </tbody>
@@ -121,12 +121,13 @@ this.$store.dispatch("set_staff");
     methods:{
       onDelete(employees){
     this.alertify.confirm('คุณต้องการจะลบข้อมูลนี้ใช่หรือไม่ ?').setHeader('<em> แจ้งเตือน ! </em> '),() =>{
+
 console.log(employees);
         }; 
 
-      },gotoEdit(id,name,tel){
+      },gotoEdit(id,name,tel,user,email,address,model,numcar,pass){
         
-        this.$router.push({name :"admin-Edit_Employees",params:{ id:id,name:name,tel:tel
+        this.$router.push({name :"admin-Edit_Employees",params:{ id:id,name:name,tel:tel,user:user,email:email,address:address,model:model,numcar:numcar,pass:pass
         }})
     }
     }
