@@ -104,13 +104,13 @@
                    <td>
                      <!-- <expandable-image/> -->
                 <div class="img-container" @click="zoomimg()">
-                  <expandable-image v-bind:src="user.imgcar"   alt="user" />
+                  <expandable-image v-bind:src="user.imgpay"   alt="user" />
                 </div>
                 
               </td>
                <td>
                 <div class="img-container">
-                  <expandable-image v-bind:src="user.imgpay" alt="user" />
+                  <expandable-image v-bind:src="user.imgcar" alt="user" />
                 </div>
                 
               </td>

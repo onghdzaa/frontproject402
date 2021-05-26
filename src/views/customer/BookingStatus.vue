@@ -182,6 +182,12 @@ export default {
     onDelete() {
 //   !! ลีอองใส่เมทอดลบการจองในนี้ !!
       // NoBooking
+       axios.delete('https://appcarwashbackend.herokuapp.com/deletereserve',{params:{id:this.id_reserve}}).then(res=>{
+        console.log(res.status);
+            })
+            .catch(error =>{ 
+                console.error(error);
+           });
 this.$router.push({ name: "NoBooking" });
     }, 
 

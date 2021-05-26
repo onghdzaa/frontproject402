@@ -99,6 +99,7 @@
 import Layout from "@/components/Layout";
 //import Pagination from "@/components/Pagination";
 // import Layout from '../../components/Layout.vue';
+import axios from 'axios';
 import {mapState} from "vuex";
 export default {
   components: { Layout },
@@ -119,11 +120,20 @@ this.$store.dispatch("set_staff");
         };
     },
     methods:{
-      onDelete(employees){
-    this.alertify.confirm('คุณต้องการจะลบข้อมูลนี้ใช่หรือไม่ ?').setHeader('<em> แจ้งเตือน ! </em> '),() =>{
-
-console.log(employees);
-        }; 
+      onDelete(id){
+        console.log("asdasdasd");
+        //console.log(id)
+  // this.alertify.confirm('คุณต้องการจะลบข้อมูลนี้ใช่หรือไม่ ?').setHeader('<em> แจ้งเตือน ! </em> ')
+    //,(res) =>{
+      this.alertify.confirm('<em> แจ้งเตือน ! </em>', 'คุณต้องการจะลบข้อมูลนี้ใช่หรือไม่ ?', function(){
+        
+         axios.delete('https://appcarwashbackend.herokuapp.com/deleteemployee',{params:{id:id}}).then(res=>{
+        console.log(res.status);
+            })
+            .catch(error =>{ 
+                console.error(error);
+           });
+            }, function(){});
 
       },gotoEdit(id,name,tel,user,email,address,model,numcar,pass){
         

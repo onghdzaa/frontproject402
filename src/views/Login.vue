@@ -56,6 +56,7 @@
                         <br>
                         </button>
                     </div>
+                       <div>{{showui()}}</div>
                
                    
                     
@@ -67,6 +68,7 @@
 
 <script>
 import axios from 'axios';
+import firebase from '../firebase'
 export default {
     data(){
         return {
@@ -78,7 +80,56 @@ export default {
             
         };
     },
+      created () {
+  this.requestPermission()
+//    firebase.messaging.onMessage((payload) => {
+//        console.log("asdasd");
+//     console.log('Message received. ', payload);
+//     // Update the UI to include the received message.
+//    // appendMessage(payload);
+//   });
+  },
     methods: {
+          showui(){
+             firebase.messaging
+            // console.log("success");
+//return messaging
+        },
+        resetUI() {
+    // clearMessages();
+    // showToken('loading...');
+    // Get registration token. Initially this makes a network call, once retrieved
+    // subsequent calls to getToken will return from cache.
+    firebase.messaging.getToken({vapidKey: 'BCvtgZGHS60_Ea2BhAzxroi9z8Xkwrf_mt6RYvsl81BTdY-faFjfO2YbQnAMnLq7n_eP0wMHctQOk2nr5FCCjMU'}).then((currentToken) => {
+      if (currentToken) {
+          console.log(currentToken);
+          this.$session.set('key',currentToken);
+        // sendTokenToServer(currentToken);
+        // updateUIForPushEnabled(currentToken);
+      } else {
+        // Show permission request.
+        console.log('No registration token available. Request permission to generate one.');
+        // Show permission UI.
+        // updateUIForPushPermissionRequired();
+        // setTokenSentToServer(false);
+      }
+    }).catch((err) => {
+      console.log('An error occurred while retrieving token. ', err);
+    //   showToken('Error retrieving registration token. ', err);
+    //   setTokenSentToServer(false);
+    });
+  },
+          requestPermission() {
+    console.log('Requesting permission...');
+    Notification.requestPermission().then((permission) => {
+      if (permission === 'granted') {
+        console.log('Notification permission granted.');
+        this.resetUI();
+      } else {
+        console.log('Unable to get permission to notify.');
+      }
+    });
+  },
         onsubmit(){
            this.$validator.validateAll().then(valid => {
                console.log(valid);
@@ -89,10 +140,22 @@ export default {
                 console.log(res.data.result)
                 this.users=res.data.results;
                 if(res.data.result==="successful"&&res.data.type!=1&&res.data.type!=2){
+                    
                     this.$router.push({name :"customer-booking"});
                     //console.log(parameters+"sdsddsdsasda");
                       axios.post('https://appcarwashbackend.herokuapp.com/logindata',parameters).then(res=>{
                      console.log(res.data[0].name);
+                      const parameterkey={"key":this.$session.get('key'),"id":res.data[0].numid};
+                     if(this.$session.get('key')!=undefined){
+                         axios.put('https://appcarwashbackend.herokuapp.com/setkey',parameterkey).then(resz=>{
+                             console.log(resz.status)
+    //console.log(res.data[0].status)
+            })
+            .catch(error =>{ 
+                console.error(error);
+            });  
+                   // console.log(this.$session.get('key'));
+                     }
                    //  const parameters={"username":this.form.username,"password":this.form.password}
               this.$session.start();
             this.$session.set('user',res.data[0].numid);
