@@ -82,6 +82,12 @@ export default {
     },
       created () {
   this.requestPermission()
+ // firebase.messaging
+//    this.messaging.onMessage((payload) => {
+//     console.log('Message received. ', payload);
+//     // Update the UI to include the received message.
+//    // appendMessage(payload);
+//   });
 //    firebase.messaging.onMessage((payload) => {
 //        console.log("asdasd");
 //     console.log('Message received. ', payload);
@@ -95,6 +101,7 @@ export default {
             // console.log("success");
 //return messaging
         },
+        
         resetUI() {
     // clearMessages();
     // showToken('loading...');

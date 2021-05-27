@@ -96,13 +96,13 @@ export default {
   created(){
    
  axios.get('https://appcarwashbackend.herokuapp.com/riderstop',{params:{id:this.$session.get('user')}}).then(res=>{
-    //console.log(res.data[0].status)
-   // console.log(res.data.result)
+    console.log(this.$session.get('user'))
+    console.log(res.data[0].result)
    // console.log(res.data);
-    if(res.data.result=="error"){
+    if(res.data[0].result=="error"){
 this.form.path="/rider/UnClick"
     }else{
-
+//console.log(res.data[0].id);
     this.$session.set('idwork',res.data[0].id);
     if(res.data[0].status=="ยืนยันการจองคิว"){
 this.form.path="/rider/WorkStatus"
