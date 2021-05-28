@@ -45,7 +45,7 @@
             <div>เบอร์โทรศัพท์ : {{sv.tell_staff}}</div>
             <div>รหัสพนักงาน  : {{sv.id_staff}}</div>
             <!-- เพิ่ม ช่องใส่คะแนนแต่ละคน <i class="fa fa-user" aria-hidden="true"></i>-->
-            <div>คะแนน : {{sv.average}} / 5 <i class="fa fa-star-half-o" aria-hidden="true"></i></div> 
+            <div>คะแนน : {{sv.average}} / 5.00 <i class="fa fa-star-half-o" aria-hidden="true"></i></div> 
              <div>จำนวนคนให้คะแนน :  {{sv.count1}} คน  <i class="fa fa-user" aria-hidden="true"></i></div> 
             
             <hr>

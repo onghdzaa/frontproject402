@@ -69,6 +69,7 @@
               <th>รหัส</th>
               
               <th>สถานะ</th>
+              <th>ยกเลิกงาน</th>
               <hr />
               <!-- <th></th> -->
             </tr>
@@ -78,7 +79,7 @@
               <td>
                  <div class="help" style="font-size:1px;color:#fff">================</div>
                 <div class="img-container">
-                  <expandable-image src="/img/imguser.jpg" alt="employee" />
+                  <expandable-image v-bind:src="employee.img" alt="employee" />
                 </div>
                 <!-- <div class="help" style="font-size:1px;color:#fff">================</div> -->
               </td>
@@ -88,14 +89,26 @@
                      <td>{{employee.numcar}}</td>
                        <td>{{employee.address}}</td>
                      <td>{{employee.id}}</td>
-                   <td> <div class="text-right">
+                   <td> 
                      
                     <label class="badge badge-success" style="color:black" v-if="employee.status == 'เสร็จสิ้น'">
                         <i class="fa fa-check-square-o" style="color:black"></i> {{employee.status}}
                      </label>
                       <label class="badge badge-warning"  style="width:100%; background-color:#FFCC33;" v-if="employee.status != 'เสร็จสิ้น'">
                         <i class="fa fa-hourglass" style="color:black"></i> {{employee.status}}
-                     </label>
+                     </label> </td>
+                   <td class="text-right">
+                <!-- <i  
+                 @click="gotoEdit()"
+                  class="pointer fa fa-pencil-square"
+                  style="padding-right: 19%; color: #17a2bb"
+                >
+                </i> -->
+                  <button type="submit" @click="cancelButton(employee.id)" class="btn btn-info btn-block" style=" margin-top: 10px;  background-color: #ed2939;color:#fff;">
+                  ยกเลิกงาน
+                </button>
+                <!-- <i @click="onDelete(sv)" class="fa fa-arrow-circle-right" style="background-color: #ed2939"> ทำเลย</i> -->
+              </td>
                      <!-- เชื่อมกับสถานะเพื่อเปลี่ยนไอคอน -->
                        <!-- <label class="badge badge-success" v-if="item.bk_status == 'allowed'">
                                     <i class="fa fa-check-square-o"></i> อนุมัติแล้ว
@@ -105,7 +118,7 @@
                                     <i class="fa fa-window-close"></i> ไม่สำเร็จ
                                 </label> -->
 
-                     </div></td>
+                    
               
              
             </tr>
@@ -132,6 +145,19 @@ this.$store.dispatch("set_calender");
   },
 
   methods: {
+    cancelButton(id){
+ this.alertify.confirm('<em> แจ้งเตือน ! </em>', 'คุณต้องการจะลบข้อมูลนี้ใช่หรือไม่ ?', function(){
+        
+         axios.delete('https://appcarwashbackend.herokuapp.com/deletelistcustomer',{params:{id:id}}).then(res=>{
+        console.log(res.status);
+            })
+            .catch(error =>{ 
+                console.error(error);
+           });
+            }, function(){});
+
+
+    },
    
     reset(){
          axios.put('https://appcarwashbackend.herokuapp.com/reset').then(res=>{

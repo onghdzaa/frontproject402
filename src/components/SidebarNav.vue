@@ -25,7 +25,7 @@
 
         <router-link to='/admin' class="sidebar-link">
           <i class="fa fa-chevron-circle-right" style="color: #17a2bb"></i>
-          ระบุจำนวนพนักงาน
+          แก้ไขจำนวนพนักงาน
         </router-link>
       </div>
     </section>
