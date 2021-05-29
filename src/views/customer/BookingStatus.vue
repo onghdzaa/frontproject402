@@ -113,7 +113,7 @@
                   max-width: 75px;
                   background-color: #17a2bb;
                   color: #fff;
-                "
+                " :disabled="this.status!='ชำระเงินเสร็จสิ้น'"
               >
                 ยืนยัน
               </button>

@@ -82,7 +82,7 @@
                   style="padding-right: 19%; color: #17a2bb"
                 >
                 </i>
-                <i @click="onDelete(sv)" class="pointer fa fa-trash" style="color: #ed2939"> </i>
+                <!-- <i @click="onDelete(sv)" class="pointer fa fa-trash" style="color: #ed2939"> </i> -->
               </td>
             </tr>
           </tbody>
