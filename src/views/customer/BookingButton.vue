@@ -160,7 +160,7 @@
 <br>
 <span>Picked: {{ picked }}</span> -->
 <!-- <h1>map</h1> -->
-<div class="gpsservice" style="margin-bottom:10px;">ปักหมุดที่อยู่ </div>
+<div class="gpsservice" style="margin-bottom:10px;">ที่อยู่ปัจจุบัน</div>
 <div>
                 <GmapMap
                   :center="coordinates"

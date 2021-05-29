@@ -216,7 +216,7 @@ import Layout from "@/components/Layout";
 import axios from "axios";
 // import Layout from '../../components/Layout.vue';
 export default {
-  props:["id","name","tel","user","email","address","numcar","model","pass"],
+  props:["id","name","tel","user","email","address","numcar","model","pass","img"],
   data(){
     console.log(this.id)
         return {
@@ -230,7 +230,7 @@ export default {
                 eq_address:this.address,
                 eq_numcar:this.numcar,
                 eq_model:this.model,
-                eq_img:""
+                eq_img:this.img
                 
 
             }

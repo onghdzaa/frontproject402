@@ -77,7 +77,7 @@
               
               <td class="text-right">
                 <i  
-                 @click="gotoEdit(sv.type,sv.price,sv.process,sv.id)"
+                 @click="gotoEdit(sv.type,sv.price,sv.process,sv.id,sv.img)"
                   class="pointer fa fa-pencil-square"
                   style="padding-right: 19%; color: #17a2bb"
                 >
@@ -129,8 +129,8 @@ this.$store.dispatch("set_listprice");
 console.log(service);
         }
         
-      },gotoEdit(services,price,waytobuy,id){
-        this.$router.push({name :"admin-Edit_Price",params: { service: services , price: price,waytobuy: waytobuy,id:id}})
+      },gotoEdit(services,price,waytobuy,id,img){
+        this.$router.push({name :"admin-Edit_Price",params: { service: services , price: price,waytobuy: waytobuy,id:id,img:img}})
     }
     }
 };

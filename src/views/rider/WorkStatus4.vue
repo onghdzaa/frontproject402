@@ -250,7 +250,7 @@ components:{
                  console.log(valid);
                 //  this.alertify.confirm('การจองเสร็จสิ้น').setHeader('<em> แจ้งเตือน ! </em> ')
                  console.log(this.form.radio);
-                if(this.form.radio=="โอนเงิน"&&this.form.img == ""){
+                if(this.form.radio=="โอนเงิน"&&this.form.img == "/img/noimg.jpg"){
                   console.log("sadasd");
 return this.alertify.warning('กรุณากรอกข้อมูลให้ครบ !!')
                 }else if(this.form.radio=="เงินสด"&& this.form.img != ""){console.log("โอนเงิน");}

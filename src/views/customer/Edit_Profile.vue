@@ -205,6 +205,7 @@ export default {
         this.form.model=res.data[0].numcar;
         this.form.numcar=res.data[0].numcar;
         this.form.username=res.data[0].user_id;
+        this.form.img=res.data[0].img;
         
             })
             .catch(error =>{ 

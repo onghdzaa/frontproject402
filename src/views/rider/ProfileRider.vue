@@ -35,7 +35,7 @@
       <div class="card mb-3" style=" border-right: solid 9px #17A2BB;">
       <div class="row align align-items-center">
         <div class="col-sm-4 " >
-          <img src="/img/employee.png"  alt="user" class="img-booking" style="max-width: 100%;">
+          <img v-bind:src="img" alt="user" class="img-booking" style="max-width: 100%;">
         </div>
         <div class="col-sm-8  " style=" margin-left: -40px ;" >
           <div class="card-body" style="font-size: 19px;color:dimgray;">
@@ -83,7 +83,7 @@ components:{
     address:'53/92 ตลาด interzone จังหวัด กรุงเทพ',
     model:'totota',
     numcar:'รข3443',
-
+    img:"/img/employee.png"
 
     };
   },
@@ -98,7 +98,7 @@ components:{
          this.model=res.data[0].model;
          this.numcar=res.data[0].numcar;
         this.username=res.data[0].username;
-
+        this.img=res.data[0].img_staff;
             })
             .catch(error =>{ 
                 console.error(error);

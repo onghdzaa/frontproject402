@@ -133,14 +133,14 @@ import Layout from "@/components/Layout";
 import axios from "axios";
 // import Layout from '../../components/Layout.vue';
 export default {
-   props: ["service", "price", "waytobuy","id"],
+   props: ["service", "price", "waytobuy","id","img"],
   data(){
         return {
             form:{
                 // price_service:this.service,
                 price_price:this.price,
                 price_waytobuy:this.waytobuy,
-                price_img:""
+                price_img:this.img
                 
 
             }

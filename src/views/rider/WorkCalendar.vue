@@ -41,7 +41,7 @@
           <thead>
             <tr>
               
-              <!-- <th>รูป</th> -->
+              <th>รูปภาพลูกค้า</th>
               <th>เวลา</th>
               <th>ชื่อ-นามสกุล</th>
               <th>เบอร์โทรศัพท์</th>
@@ -56,9 +56,9 @@
           <tbody>
             <tr v-for="lr in listrider" :key="lr.id">
               
-               <!-- <td> <div class="img-container">
-                  <img src="/img/imguser.jpg" alt="employee" />
-                </div></td> -->
+               <td> <div class="img-container">
+                  <expandable-image v-bind:src="lr.img_member" alt="employee" />
+                </div></td>
                <td>{{lr.time}}</td>
               <td>{{lr.name_member}} </td>
                     <td>{{lr.tel_member}}</td>

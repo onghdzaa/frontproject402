@@ -74,7 +74,7 @@
                    
               
               <td class="text-right">
-                <i @click="gotoEdit(sv.id_staff,sv.full_name,sv.tell_staff,sv.username,sv.email,sv.address,sv.model,sv.numcar,sv.password)"
+                <i @click="gotoEdit(sv.id_staff,sv.full_name,sv.tell_staff,sv.username,sv.email,sv.address,sv.model,sv.numcar,sv.password,sv.img_staff)"
                   class="pointer fa fa-pencil-square"
                   style="padding-right: 19%; color: #17a2bb"
                 >
@@ -135,9 +135,9 @@ this.$store.dispatch("set_staff");
            });
             }, function(){});
 
-      },gotoEdit(id,name,tel,user,email,address,model,numcar,pass){
+      },gotoEdit(id,name,tel,user,email,address,model,numcar,pass,img){
         
-        this.$router.push({name :"admin-Edit_Employees",params:{ id:id,name:name,tel:tel,user:user,email:email,address:address,model:model,numcar:numcar,pass:pass
+        this.$router.push({name :"admin-Edit_Employees",params:{ id:id,name:name,tel:tel,user:user,email:email,address:address,model:model,numcar:numcar,pass:pass,img:img
         }})
     }
     }
