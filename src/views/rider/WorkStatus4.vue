@@ -84,7 +84,7 @@
         
         <div class="col-sm-8">
           
-        <div>    <i class="fa fa-check-square" aria-hidden="true"></i> ชำระเงินเสร็จสิ้น</div>
+        <div>    <i class="fa fa-check-square" aria-hidden="true"></i>การชำระเงิน</div>
         <br>
         <hr>
         <div><i class="fa fa-money" aria-hidden="true"></i> ประเภทการชำระเงิน</div>
