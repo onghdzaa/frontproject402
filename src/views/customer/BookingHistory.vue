@@ -70,9 +70,10 @@
           </thead>
           <tbody>
             <tr v-for="sv in bookinghistory" :key="sv.id">
-              <td>
+              <td><div class="help" style="font-size:1px;color:#fff">================</div>
                 <div class="img-container">
-                  <expandable-image v-bind:src="sv.img" alt="employee" />
+                  
+                  <expandable-image v-bind:src="sv.img" alt="bookinghistory" />
                 </div>
               </td>
                <td>{{sv.time}}</td>
