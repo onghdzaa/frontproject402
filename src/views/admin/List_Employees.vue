@@ -58,6 +58,7 @@
               <th>รหัสพนักงาน</th>
               <th>ชื่อ-นามสกุล</th>
               <th>เบอร์โทรศัพท์</th>
+              <th>คะแนนพนักงาน</th>
               <th></th>
             </tr>
           </thead>
@@ -71,7 +72,7 @@
                <td>{{sv.id_staff}}</td>
               <td>{{sv.full_name}} </td>
                     <td>{{sv.tell_staff}}</td>
-                   
+                    <td>{{sv.average}}/5.00</td>
               
               <td class="text-right">
                 <i @click="gotoEdit(sv.id_staff,sv.full_name,sv.tell_staff,sv.username,sv.email,sv.address,sv.model,sv.numcar,sv.password,sv.img_staff)"
