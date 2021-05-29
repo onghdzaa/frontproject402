@@ -361,7 +361,7 @@ currentDateTime() {
               
         //       console.error(error);
         //     });
-                this.$router.push({ name: "BookingConfirm",params: { staff: this.staff , tel: this.tel ,name: this.name,time: this.time,date:this.currentDateTime()}  });
+                this.$router.push({ name: "BookingConfirm",params: { staff: this.staff , tel: this.tel ,name: this.name,time: this.time,date:this.currentDateTime(),img:this.img_staff}  });
                 //console.log(this.form);
            });
            

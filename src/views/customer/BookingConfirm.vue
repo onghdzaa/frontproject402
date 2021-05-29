@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-sm-4">
           <img
-            src="/img/employee.png"
+            v-bind:src="img"
             alt="user"
             class="img-booking"
             style="max-width: 100%"
@@ -77,7 +77,7 @@ import Layout from "@/components/Layoutcustomer";
 //import Pagination from "@/components/Pagination";
 // import Layout from '../../components/Layout.vue';
 export default {
-   props: [ "staff", "tel" ,"name","time" ,"date"],
+   props: [ "staff", "tel" ,"name","time" ,"date","img"],
   components: { Layout },
   data() {
       return {
